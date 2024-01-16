@@ -45,13 +45,10 @@ public class PhoneBookApp {
 			String hp = personInfo[1];
 			String company = personInfo[2];
 			
-			Person p01 = new Person(personInfo[0], personInfo[1], personInfo[2]);
-			Person p02 = new Person(personInfo[0], personInfo[1], personInfo[2]);
-			Person p03 = new Person(personInfo[0], personInfo[1], personInfo[2]);
-			
-			pList.add(p01);
-			pList.add(p02);
-			pList.add(p03);
+			Person p = new Person(personInfo[0], personInfo[1], personInfo[2]);
+
+			pList.add(p);
+
 			
 			
 

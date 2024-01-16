@@ -12,9 +12,7 @@ import java.util.ArrayList;
 public class PBA {
 
 	public static void main(String[] args) throws IOException {
-		
-		
-		
+
 		// Reader 준비
 		// 리더 + 버퍼 --> PhoneDB.txt UTF-8
 		Reader fr = new FileReader("C:\\javaStudy\\PhoneDB.txt");
@@ -24,15 +22,9 @@ public class PBA {
 		// 라이터 + 버퍼
 		Writer wr = new FileWriter("C:\\javaStudy\\phoneDB.txt", true);
 		BufferedWriter bw = new BufferedWriter(wr);
-						
-		// 정보 추가
-		bw.newLine();
-		bw.write("이은빈,010-0000-0000,031-111-1111");
-		
-		
+
 		// 리스트 만들기
 		ArrayList<Person> pList = new ArrayList<Person>();
-		
 
 		// 반복
 		while (true) {
@@ -46,36 +38,41 @@ public class PBA {
 			}
 
 			// ,로 분리한다
-				// name
-				// hp
-				// company
 			String[] personInfo = str.split(",");
 			String name = personInfo[0];
 			String hp = personInfo[1];
 			String company = personInfo[2];
 
-			Person p01 = new Person(personInfo[0], personInfo[1], personInfo[2]);
-			Person p02 = new Person(personInfo[0], personInfo[1], personInfo[2]);
-			Person p03 = new Person(personInfo[0], personInfo[1], personInfo[2]);
-			Person p04 = new Person(personInfo[0], personInfo[1], personInfo[2]);
-		
+			Person p = new Person(personInfo[0], personInfo[1], personInfo[2]);
 			
-			pList.add(p01);
-			pList.add(p02);
-			pList.add(p03);
-			pList.add(p04);
-
+			pList.add(p);
+			
+			
 			// 출력한다
 			System.out.println("이름: " + name);
 			System.out.println("핸드폰: " + hp);
 			System.out.println("회사: " + company);
 			System.out.println("");
+			
 		}
-
+		// 정보 추가
+		Person p1 = new Person("이은빈", "010-0000-0000", "031-111-1111");
+		pList.add(p1);
+		p1.draw();
+		bw.write("이은빈,010-0000-0000,031-111-1111");
+		
+		//bw.newLine();
+		//bw.write(" d");
+		//for(Person person : pList) {
+		//	bw.write(person.getName() + "," + person.getHp() + "," + person.getCompany());
+		//	bw.newLine();
+	//	}
+		
+		
+		
 		// 종료
 		br.close();
 		bw.close();
 
 	}
-
 }
