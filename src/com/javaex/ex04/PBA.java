@@ -56,12 +56,13 @@ public class PBA {
 			
 		}
 		// 정보 추가
+		bw.newLine();
 		Person p1 = new Person("이은빈", "010-0000-0000", "031-111-1111");
 		pList.add(p1);
 		p1.draw();
 		bw.write("이은빈,010-0000-0000,031-111-1111");
 		
-		//bw.newLine();
+		
 		//bw.write(" d");
 		//for(Person person : pList) {
 		//	bw.write(person.getName() + "," + person.getHp() + "," + person.getCompany());
